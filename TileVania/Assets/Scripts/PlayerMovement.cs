@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     Vector2 moveInput;
     [SerializeField] float runSpeed = 6f;
+    [SerializeField] float jumpSpeed = 5f;
     [SerializeField] Rigidbody2D playerRigidBody;
     Animator myAnimator;
 
@@ -23,8 +24,17 @@ public class PlayerMovement : MonoBehaviour
         FlipSprite();
     }
 
-    void OnMove(InputValue value)
+    void OnJump(InputValue value)
     {
+        if(value.isPressed)
+        {
+            //do stuff
+            playerRigidBody.velocity += new Vector2(0f, jumpSpeed); 
+        }
+    }
+
+    void OnMove(InputValue value)
+    {   
         moveInput = value.Get<Vector2>();
         Debug.Log(moveInput);
     }
