@@ -14216,7 +14216,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 3.68
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -14240,7 +14240,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.1883755, y: 1.6709404, z: -10}
+  m_LocalPosition: {x: -10.261036, y: 1.7169745, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19991,13 +19991,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 399602713256414335, guid: 86454bd5e77aa75449e044c4614b3381, type: 3}
+      propertyPath: m_Size.x
+      value: 0.52341557
+      objectReference: {fileID: 0}
+    - target: {fileID: 399602713256414335, guid: 86454bd5e77aa75449e044c4614b3381, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.043166637
+      objectReference: {fileID: 0}
     - target: {fileID: 5463304417998841821, guid: 86454bd5e77aa75449e044c4614b3381, type: 3}
       propertyPath: m_Name
       value: Ginger ( Player)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5463304417998841821, guid: 86454bd5e77aa75449e044c4614b3381, type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5463304417998841823, guid: 86454bd5e77aa75449e044c4614b3381, type: 3}
       propertyPath: m_RootOrder
@@ -20045,8 +20049,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86454bd5e77aa75449e044c4614b3381, type: 3}
+--- !u!1 &5463304418360230217 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5463304417998841821, guid: 86454bd5e77aa75449e044c4614b3381, type: 3}
+  m_PrefabInstance: {fileID: 5463304418360230216}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &5463304418360230223 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5463304417998841822, guid: 86454bd5e77aa75449e044c4614b3381, type: 3}
   m_PrefabInstance: {fileID: 5463304418360230216}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &5463304418360230224
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5463304418360230217}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.051633358, y: -0.45850402}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.38453007, y: 0.08299196}
+  m_EdgeRadius: 0
