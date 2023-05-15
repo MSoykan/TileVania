@@ -23,6 +23,11 @@ public class EnemyMovement : MonoBehaviour
         FlipEnemyFacing();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Triggered");
+    }
+
     void FlipEnemyFacing()
     {
         transform.localScale = new Vector2(-(Mathf.Sign(enemyRigidBody.velocity.x)) , 1f);
