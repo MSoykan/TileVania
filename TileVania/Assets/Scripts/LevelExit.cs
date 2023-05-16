@@ -9,7 +9,10 @@ public class LevelExit : MonoBehaviour
     float levelLoadDelay = 1.5f;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        StartCoroutine(LoadNextLevel());
+        if (collision.tag == "Player")
+        {
+            StartCoroutine(LoadNextLevel());
+        }
     }
 
     IEnumerator LoadNextLevel()
@@ -18,7 +21,7 @@ public class LevelExit : MonoBehaviour
         var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
 
-        if(nextSceneIndex == SceneManager.sceneCount)
+        if (nextSceneIndex == SceneManager.sceneCount)
         {
             nextSceneIndex = 0;
         }
