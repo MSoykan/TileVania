@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     BoxCollider2D myFeetCollider;
     float gravityScaleAtStart;
     bool isAlive = true;
+    float coinCount = 0;
 
     void Start()
     {
