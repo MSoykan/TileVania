@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     CapsuleCollider2D capsuleCollider;
     BoxCollider2D myFeetCollider;
     float gravityScaleAtStart;
+    bool isAlive = true;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        Die();
         Run();
         FlipSprite();
         ClimbLadder();
@@ -34,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value)
     {
+        if (!isAlive) { return; }
         if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
         if (value.isPressed)
         {
@@ -50,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Run()
     {
+        if (!isAlive) { return; }
         Vector2 playerVelocity = new Vector2(moveInput.x * runSpeed, playerRigidBody.velocity.y);
         playerRigidBody.velocity = playerVelocity;
         bool playerHorizontalSpeed = Mathf.Abs(playerRigidBody.velocity.x) > Mathf.Epsilon;
@@ -58,12 +62,12 @@ public class PlayerMovement : MonoBehaviour
 
     void ClimbLadder()
     {
-
+        if (!isAlive) { return; }
 
         if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ladder")))
         {
-            myAnimator.SetBool("isClimbing", false) ;
-            playerRigidBody.gravityScale = gravityScaleAtStart; 
+            myAnimator.SetBool("isClimbing", false);
+            playerRigidBody.gravityScale = gravityScaleAtStart;
             return;
         }
 
@@ -85,4 +89,16 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector2(Mathf.Sign(playerRigidBody.velocity.x), 1f);
         }
     }
+
+    void Die()
+    {
+        if (capsuleCollider.IsTouchingLayers(LayerMask.GetMask("Enemies")))
+        {
+            isAlive = false;
+            myAnimator.SetBool("isClimbing", false);
+            myAnimator.SetBool("IsRunning", false);
+        }
+    }
+
+
 }

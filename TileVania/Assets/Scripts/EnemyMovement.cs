@@ -25,7 +25,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Triggered");
+        Debug.Log("Triggered"); 
     }
 
     void FlipEnemyFacing()
