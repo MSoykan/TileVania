@@ -20,7 +20,7 @@ TagManager:
   - Enemies
   - Hazards
   - Bullets
-  - 
+  - Interactables
   - 
   - 
   - 
@@ -57,11 +57,14 @@ TagManager:
   - name: Bounce
     uniqueID: 888132411
     locked: 0
-  - name: Player
-    uniqueID: 16913551
-    locked: 0
   - name: Hazards
     uniqueID: 3654269941
+    locked: 0
+  - name: Interactables
+    uniqueID: 1391609779
+    locked: 0
+  - name: Player
+    uniqueID: 16913551
     locked: 0
   - name: Enemies
     uniqueID: 4157930909
