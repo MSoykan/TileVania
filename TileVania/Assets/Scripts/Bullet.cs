@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-
+    [SerializeField] AudioClip shootBulletSFX; 
     [SerializeField] float bulletSpeed = 20f;
     Rigidbody2D bulletRigidBody;
     PlayerMovement player;
@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
+        AudioSource.PlayClipAtPoint(shootBulletSFX, Camera.main.transform.position, 0.2f);
         player = FindObjectOfType<PlayerMovement>();
         bulletRigidBody = GetComponent<Rigidbody2D>();
         xSpeed = player.transform.localScale.x * bulletSpeed;
